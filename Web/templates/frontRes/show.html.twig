@@ -1,0 +1,30 @@
+
+
+    <h1 style="color: white">Reservation</h1>
+
+    <table class="table">
+        <tbody>
+        <div class="container">
+        <h1 style="color: #ffffff">liste des Reservations</h1>
+        <table border="1" style="color: white;width: 500px">
+            <tr>
+                <th>Idreservation</th>
+                <td>{{ reservation.idreservation }}</td>
+            </tr>
+
+            <tr>
+                <th>TypePaiement</th>
+                <td>{{ reservation.typePaiement }}</td>
+            </tr>
+            <tr>
+                <th>NbrPlace</th>
+                <td>{{ reservation.nbrPlace }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_reservation_index2') }}">back to list</a>
+
+    <a href="{{ path('app_reservation_edit_front', {'idreservation': reservation.idreservation}) }}">edit</a>
+
+    {{ include('reservation/_delete_form.html.twig') }}

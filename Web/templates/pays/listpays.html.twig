@@ -1,0 +1,35 @@
+
+<h1 align="center">Liste Pays</h1><hr>
+    <table id="pays" class="table table-striped">
+        <thead>
+      
+        </thead>
+        <tbody>
+        <table align="center" border="1">
+          <tr>
+            <td>id</td>
+
+            <td>Pays</td>
+          
+           
+        </tr>
+        {% for i in aa %}
+        
+            <tr>
+
+
+
+                <td>{{ i.id }}</td>
+
+                <td>{{ i.pays }}</td>
+            
+               
+
+
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+

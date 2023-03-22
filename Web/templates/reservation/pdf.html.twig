@@ -1,0 +1,28 @@
+    <table class=" table ">
+        <thead>
+        <tr>
+        <tr>
+            <th>DateReservation</th>
+            <th>TypePaiement</th>
+            <th>NbrPlace</th>
+            <th>Prix a payer</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for reservation in reservations %}
+            <tr>
+                <td>{{ reservation.dateReservation ? reservation.dateReservation|date('Y-m-d') : '' }}</td>
+                <td>{{ reservation.typePaiement }}</td>
+
+                <td>{{ reservation.nbrPlace }}</td>
+                <td>{{ reservation.prix }}</td>
+
+                <td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+
+    </table>
+</div>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <VBox layoutX="54.0" layoutY="101.0" prefHeight="207.0" prefWidth="72.0" spacing="15.0">
+         <children>
+            <Label text="ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="NOM">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="TYPE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="ADRESSE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="NUM">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="131.0" layoutY="101.0" prefHeight="207.0" prefWidth="182.0" spacing="10.0">
+         <children>
+            <TextField fx:id="id" />
+            <TextField fx:id="nom" />
+            <TextField fx:id="type" />
+            <TextField fx:id="adresse" />
+            <TextField fx:id="num" />
+         </children>
+      </VBox>
+      <TableView fx:id="tvdiv" layoutX="339.0" layoutY="101.0" onMousePressed="#Afficher" prefHeight="346.0" prefWidth="446.0">
+        <columns>
+          <TableColumn fx:id="colid" prefWidth="36.79998779296875" text="ID" />
+          <TableColumn fx:id="colnom" prefWidth="92.800048828125" text="NOM" />
+            <TableColumn fx:id="coltype" prefWidth="84.79998779296875" text="TYPE" />
+            <TableColumn fx:id="coladresse" prefWidth="145.5999755859375" text="ADRESSE" />
+            <TableColumn fx:id="colnum" prefWidth="87.199951171875" text="NUM" />
+        </columns>
+      </TableView>
+      <Button layoutX="48.0" layoutY="321.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="26.0" prefWidth="84.0" text="Ajouter" />
+      <Button layoutX="139.0" layoutY="321.0" mnemonicParsing="false" onAction="#modifier" prefHeight="26.0" prefWidth="84.0" text="Modifier" />
+      <Button layoutX="230.0" layoutY="321.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="26.0" prefWidth="84.0" text="Supprimer" />
+      <ComboBox fx:id="cbtype" layoutX="56.0" layoutY="43.0" prefHeight="26.0" prefWidth="255.0" promptText="Select TYPE" />
+      <Button layoutX="710.0" layoutY="560.0" mnemonicParsing="false" onMouseClicked="#Windowresto" text="restaurants" />
+      <Button layoutX="712.0" layoutY="43.0" mnemonicParsing="false" onAction="#Rechercher" text="Recherche" />
+      <TextField fx:id="rech" layoutX="339.0" layoutY="44.0" prefHeight="26.0" prefWidth="359.0" promptText="RECHERCHE" />
+      <TableView fx:id="tvfav" layoutX="32.0" layoutY="415.0" onMouseReleased="#Afficherfav" prefHeight="170.0" prefWidth="152.0">
+        <columns>
+          <TableColumn fx:id="nomfav" prefWidth="75.0" text="NOM" />
+          <TableColumn fx:id="numfav" prefWidth="75.0" text="NUM" />
+        </columns>
+      </TableView>
+      <Label layoutX="78.0" layoutY="393.0" text="FAVORIS">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="213.0" layoutY="415.0" onMouseClicked="#ajouterfav" pickOnBounds="true" preserveRatio="true">
+         <image>
+           
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="213.0" layoutY="466.0" onMouseClicked="#supprimerfav" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@remove.png" />
+         </image>
+      </ImageView>
+      <Button mnemonicParsing="false" onAction="#jouer" prefHeight="40.0" prefWidth="40.0" text="Game">
+         <font>
+            <Font size="8.0" />
+         </font>
+      </Button>
+      <Button layoutX="731.0" layoutY="453.0" mnemonicParsing="false" onAction="#ladate" prefHeight="26.0" prefWidth="57.0" text="DATE" />
+   </children>
+    
+</AnchorPane>

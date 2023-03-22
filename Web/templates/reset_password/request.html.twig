@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}connection{% endblock %}
+
+{% block body %}
+{{parent()}}
+    <section class="login-block">
+        <!-- Container-fluid starts -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Authentication card start -->
+                  
+                        <form method="post" class="md-float-material form-material">
+                            <div class="text-center">
+                                <img src="{{asset('back/assets/images/logo.png')}}" height="80" alt="l">
+                            </div>
+                            <div class="auth-box card">
+                                <div class="card-block">
+                                    <div class="row m-b-20">
+                                        <div class="col-md-12">
+                                            <h3 class="text-center">Reset password</h3>
+                                        </div>
+                                    </div>
+										
+
+		
+                                    <div class="form-group form-primary">
+    {% for flash_error in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+    <h1>Reset your password</h1>
+
+    {{ form_start(requestForm) }}
+        {{ form_row(requestForm.email) }}
+        <div>
+            <small>
+                Enter your email address and we will send you a
+                link to reset your password.
+            </small>
+        </div>
+
+        <button class="btn btn-primary">Send password reset email</button>
+    {{ form_end(requestForm) }}
+{% endblock %}

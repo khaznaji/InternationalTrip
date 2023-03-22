@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@gestionhotel.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidevapp4.GestionDivController">
+   <children>
+      <ImageView fitHeight="680.0" fitWidth="1021.0" layoutX="220.0" layoutY="20.0" opacity="0.71" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../IntegrationFinal/src/Image/plane-flight-cloud-public.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="329.0" layoutY="170.0" prefHeight="207.0" prefWidth="315.0" spacing="10.0">
+         <children>
+            <TextField fx:id="tftype" promptText="NOM" style="-fx-background-radius: 30;" />
+            <TextField fx:id="tfadresse" promptText="ADRESSE" style="-fx-background-radius: 30;" />
+            <TextField fx:id="tfprix" promptText="NUM" style="-fx-background-radius: 30;" />
+         </children>
+      </VBox>
+      <TableView fx:id="tabheb" layoutX="684.0" layoutY="100.0" onMousePressed="#Afficher" prefHeight="346.0" prefWidth="464.0">
+         <columns>
+            <TableColumn fx:id="tabtype" prefWidth="92.800048828125" text="NOM" />
+            <TableColumn fx:id="tabpaysa" prefWidth="84.79998779296875" text="TYPE" />
+            <TableColumn fx:id="tabadresse" prefWidth="145.5999755859375" text="ADRESSE" />
+            <TableColumn fx:id="tabprix" prefWidth="87.199951171875" text="NUM" />
+         </columns>
+      </TableView>
+      <Button layoutX="336.0" layoutY="386.0" mnemonicParsing="false" onAction="#ajouterheb" prefHeight="31.0" prefWidth="305.0" style="-fx-background-color: #f9a61c;" text="Ajouter" />
+      <Button layoutX="356.0" layoutY="431.0" mnemonicParsing="false" onAction="#modifierheb" prefHeight="31.0" prefWidth="136.0" style="-fx-background-color: #f9a61c;" text="Modifier" />
+      <Button layoutX="513.0" layoutY="431.0" mnemonicParsing="false" onAction="#supprimerheb" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: #f9a61c;" text="Supprimer" />
+      <ComboBox fx:id="affecter" layoutX="329.0" layoutY="121.0" prefHeight="31.0" prefWidth="315.0" promptText="Select TYPE" style="-fx-background-radius: 30;" />
+      <Button layoutX="1107.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#Windowresto" style="-fx-background-color: #f9a61c;" text="types" />
+      <Button layoutX="1057.0" layoutY="57.0" mnemonicParsing="false" onAction="#Rechercher" style="-fx-background-color: #f9a61c;" text="Recherche" />
+      <TextField fx:id="rech" layoutX="684.0" layoutY="58.0" prefHeight="26.0" prefWidth="359.0" promptText="RECHERCHE" style="-fx-background-radius: 30;" />
+      <TableView fx:id="tvfav" layoutX="690.0" layoutY="468.0" onMouseReleased="#Afficherfav" prefHeight="170.0" prefWidth="464.0">
+         <columns>
+            <TableColumn fx:id="nomfav" prefWidth="235.0" text="NOM" />
+            <TableColumn fx:id="numfav" prefWidth="228.0" text="NUM" />
+         </columns>
+      </TableView>
+      <Label layoutX="887.0" layoutY="446.0" text="FAVORIS">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="1166.0" layoutY="467.0" onMouseClicked="#ajouterfav" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/heart.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="1166.0" layoutY="518.0" onMouseClicked="#supprimerfav" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/remove.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="235.0" layoutY="599.0" mnemonicParsing="false" onAction="#jouer" prefHeight="35.0" prefWidth="121.0" style="-fx-background-color: #f9a61c;" text="Game" />
+      <Button layoutX="367.0" layoutY="599.0" mnemonicParsing="false" onAction="#ladate" prefHeight="35.0" prefWidth="136.0" style="-fx-background-color: #f9a61c;" text="DATE" />
+      <VBox layoutX="20.0" layoutY="12.0" prefHeight="688.0" prefWidth="210.0" style="-fx-background-color: #05071F;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" layoutX="23.0" layoutY="30.0" prefHeight="579.0" prefWidth="204.0" style="-fx-background-color: #05071F;">
+         <children>
+            <ImageView fitHeight="111.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../IntegrationFinal/src/Image/IT%20%20(2).png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="20.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+         <stylesheets>
+            <URL value="@../../../IntegrationFinal/src/pidevapp4/dashboard.css" />
+            <URL value="@../../../IntegrationFinal/src/pidevapp4/dashboard.css" />
+         </stylesheets>
+      </VBox>
+      <Button layoutX="520.0" layoutY="520.0" mnemonicParsing="false" onAction="#GoMenu" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: #f9a61c;" text="menu" />
+   </children>
+</AnchorPane>

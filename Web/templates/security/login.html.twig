@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}connection{% endblock %}
+
+{% block body %}
+{{parent()}}
+    <section class="login-block">
+        <!-- Container-fluid starts -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Authentication card start -->
+                  
+                        <form method="post" class="md-float-material form-material">
+                            <div class="text-center">
+                                <img src="{{asset('back/assets/images/logo.png')}}" height="80" alt="l">
+                            </div>
+                            <div class="auth-box card">
+                                <div class="card-block">
+                                    <div class="row m-b-20">
+                                        <div class="col-md-12">
+                                            <h3 class="text-center">Connecter</h3>
+                                        </div>
+                                    </div>
+										{% if app.user %}
+                                         <div class="mb-3">
+                                            You are logged in as
+				                             {{ app.user.username }},
+				                               <a href="{{ path('app_logout') }}">Logout</a>
+			                            </div>
+		                                {% endif %}
+										{% if error %}
+			<div class="alert alert-danger">{{ error }}</div>
+			<script>
+				$(function () { // Success Type
+            $("#ts-success").on("click", function () {
+            toastr.success("Have fun storming the castle!", "Miracle Max Says");
+            });
+            });
+			</script>
+
+		{% endif %}
+                                    <div class="form-group form-primary">
+                                        <input type="email" value="{{ last_username }}" name="email" class="form-control" required="">
+                                        <span class="form-bar"></span>
+                                        <label class="float-label">Votre Address Email</label>
+                                    </div>
+                                    <div class="form-group form-primary">
+                                        <input  type="password" name="password" id="inputPassword" class="form-control" required="">
+                                        <span class="form-bar"></span>
+                                        <label class="float-label">Mot de passe</label>
+                                    </div>
+									<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                                    <div class="row m-t-25 text-left">
+                                        <div class="col-12">
+                                            <div class="checkbox-fade fade-in-primary d-">
+                                                <label>
+                                                    <input type="checkbox" id="remember_me" name="_remember_me" value="">
+                                                    <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                    <span class="text-inverse">Remember me</span>
+                                                </label>
+                                            </div>
+                                            <div class="forgot-phone text-right f-right">
+                                                <a href="{{path('app_forgot_password_request')}}" class="text-right f-w-600"> mot de passe oubliée ?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-t-30">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Connecter</button>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <p class="text-inverse text-left m-b-0">merci .</p>
+                                            <p class="text-inverse text-left"><a href="/register"><b>retour a la page d'inscription</b></a></p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <img src="back/assets/images/auth/Logo-small-bottom.png" alt="small-logo.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- end of form -->
+                </div>
+                <!-- end of col-sm-12 -->
+            </div>
+            <!-- end of row -->
+        </div>
+        <!-- end of container-fluid -->
+    </section>
+  {% endblock %}

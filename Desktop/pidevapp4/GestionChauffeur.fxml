@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidevapp4.GestionChauffeurController">
+    <stylesheets>
+        <URL value="@gestionchauffeur.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="680.0" fitWidth="1021.0" layoutX="220.0" layoutY="20.0" opacity="0.71" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../IntegrationFinal/src/Image/plane-flight-cloud-public.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="581.0" prefWidth="1064.0" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@gestiontrip.css" />
+         </stylesheets>
+         <children>
+            <Label fx:id="label" layoutX="136.0" layoutY="130.0" minHeight="16" minWidth="69" />
+            <Button layoutX="270.0" layoutY="380.0" mnemonicParsing="false" onAction="#ajouterchauffeur" prefHeight="31.0" prefWidth="237.0" text="Ajouter" textFill="WHITE" />
+            <Button layoutX="383.0" layoutY="429.0" mnemonicParsing="false" onAction="#supprimerchauffeur" prefHeight="31.0" prefWidth="171.0" text="Supprimer" textFill="WHITE" />
+            <Button fx:id="btnmodifier" layoutX="222.0" layoutY="429.0" mnemonicParsing="false" onAction="#modifierchauffeur" prefHeight="31.0" prefWidth="148.0" text="Modifier" textFill="WHITE" />
+            <TextField fx:id="tfsexe" layoutX="270.0" layoutY="231.0" onKeyReleased="#testVille" prefHeight="31.0" prefWidth="253.0" promptText="Ville" style="-fx-background-radius: 30;" />
+            <TextField fx:id="tfnumtel" layoutX="270.0" layoutY="278.0" onKeyReleased="#testOffre" prefHeight="31.0" prefWidth="253.0" promptText="Offre" style="-fx-background-color: ffff; -fx-background-radius: 30;" />
+            <TableView fx:id="tablechauff" layoutX="594.0" layoutY="132.0" onMouseClicked="#Selected" onMousePressed="#Afficher" prefHeight="527.0" prefWidth="616.0">
+               <columns>
+                  <TableColumn fx:id="noma" prefWidth="75.0" text="nom" />
+                  <TableColumn fx:id="prenoma" prefWidth="126.0" text="prenom" />
+                  <TableColumn fx:id="sexea" prefWidth="150.0" text="sexe" />
+                  <TableColumn fx:id="numtela" prefWidth="109.0" text="numtel" />
+                  <TableColumn fx:id="dispoa" prefWidth="154.0" text="dispochauff" />
+               </columns>
+            </TableView>
+            <TextField fx:id="tfdispo" layoutX="262.0" layoutY="321.0" onKeyReleased="#testPeriode" prefHeight="31.0" prefWidth="253.0" promptText="Periode" style="-fx-background-radius: 30;" />
+            <Label fx:id="erreurdescrip" layoutX="64.0" layoutY="272.0" prefHeight="21.0" prefWidth="206.0" />
+            <Label fx:id="villeerreur" layoutX="35.0" layoutY="204.0" prefHeight="21.0" prefWidth="246.0" />
+            <Label fx:id="descriperreur" layoutX="21.0" layoutY="262.0" prefHeight="21.0" prefWidth="277.0" />
+            <Label fx:id="periodeerreur" layoutX="19.0" layoutY="387.0" prefHeight="21.0" prefWidth="277.0" />
+            <Label fx:id="villererreur" layoutX="64.0" layoutY="204.0" prefHeight="21.0" prefWidth="221.0" />
+            <Label layoutX="61.0" layoutY="262.0" />
+            <Label fx:id="offreerreur" layoutX="231.0" layoutY="649.0" prefHeight="21.0" prefWidth="237.0" />
+            <Label fx:id="periodeerreur" layoutX="43.0" layoutY="387.0" prefHeight="21.0" prefWidth="221.0" />
+            <Button layoutX="521.0" layoutY="634.0" mnemonicParsing="false" onAction="#Calcul" text="stat" textFill="WHITE" />
+            <TextField fx:id="recherche_text" layoutX="603.0" layoutY="89.0" prefHeight="31.0" prefWidth="602.0" promptText="Recherche par ville" style="-fx-background-radius: 30; -fx-background-color: #10165F;" />
+            <Text fill="WHITE" layoutX="228.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Des Chauffeurs" wrappingWidth="336.240387737751">
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font>
+            </Text>
+            <TextField fx:id="tfnom" layoutX="270.0" layoutY="141.0" onKeyReleased="#testVille" prefHeight="31.0" prefWidth="253.0" promptText="Ville" style="-fx-background-radius: 30;" />
+            <TextField fx:id="tfprenom" layoutX="270.0" layoutY="189.0" onKeyReleased="#testVille" prefHeight="31.0" prefWidth="253.0" promptText="Ville" style="-fx-background-radius: 30;" />
+            <Button fx:id="btnretour" layoutX="249.0" layoutY="504.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="148.0" text="retour" textFill="WHITE" />
+            <Button fx:id="btnclose" layoutX="249.0" layoutY="569.0" mnemonicParsing="false" onAction="#closeapp" prefHeight="31.0" prefWidth="148.0" text="close" textFill="WHITE" />
+            <Label fx:id="UserName" layoutX="833.0" layoutY="14.0" prefHeight="40.0" prefWidth="263.0" />
+            <Button fx:id="Logout" layoutX="1132.0" layoutY="19.0" mnemonicParsing="false" onAction="#Logout" text="Button" />
+            <Button fx:id="btnclose1" layoutX="294.0" layoutY="616.0" mnemonicParsing="false" onAction="#GoMenu" prefHeight="31.0" prefWidth="148.0" text="menu" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <VBox layoutX="20.0" layoutY="12.0" prefHeight="688.0" prefWidth="210.0" style="-fx-background-color: #05071F;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" layoutX="23.0" layoutY="30.0" prefHeight="579.0" prefWidth="204.0" style="-fx-background-color: #05071F;">
+         <children>
+            <ImageView fitHeight="111.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../IntegrationFinal/src/Image/IT%20%20(2).png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="20.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+         <stylesheets>
+            <URL value="@../../../IntegrationFinal/src/pidevapp4/dashboard.css" />
+            <URL value="@../../../IntegrationFinal/src/pidevapp4/dashboard.css" />
+         </stylesheets>
+      </VBox>
+   </children>
+</AnchorPane>

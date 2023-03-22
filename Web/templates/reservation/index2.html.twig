@@ -1,0 +1,161 @@
+	<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	
+  <head>
+    <title>Simple Markers</title>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>Travel</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="../../Front/css/linearicons.css">
+			<link rel="stylesheet" href="../../Front/css/font-awesome.min.css">
+			<link rel="stylesheet" href="../../Front/css/bootstrap.css">
+			<link rel="stylesheet" href="../../Front/css/magnific-popup.css">
+			<link rel="stylesheet" href="../../Front/css/jquery-ui.css">				
+			<link rel="stylesheet" href="../../Front/css/nice-select.css">							
+			<link rel="stylesheet" href="../../Front/css/animate.min.css">
+			<link rel="stylesheet" href="../../Front/css/owl.carousel.css">				
+			<link rel="stylesheet" href="../../Front/css/main.css">
+		</head>
+		<body>	
+			<header id="header">
+				<div class="header-top">
+					<div class="container">
+			  		<div class="row align-items-center">
+			  			<div class="col-lg-6 col-sm-6 col-6 header-top-left">
+			  						
+			  			</div>
+			  			<div class="col-lg-6 col-sm-6 col-6 header-top-right">
+							<div class="header-social">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-dribbble"></i></a>
+								<a href="#"><i class="fa fa-behance"></i></a>
+							</div>
+			  			</div>
+			  		</div>			  					
+					</div>
+				</div>
+				<div class=" main-menu">
+					<div class="row align-items-center  ">
+				      
+				      <nav id="">
+				        <ul class="nav-menu">
+						<li><a href="/newVolClient">Acceuil</a></li>
+
+				          <li><a href="/AfficheVolFront">Vols</a></li>
+				          <li><a href="/AfficheHebergementFront">Hebergements</a></li>
+				          <li><a href="/AfficheDivFront">Divertissement</a></li>
+				          <li><a href="/newRating">Rating</a></li>
+				          <li><a href="reservation/front">Reservation</a></li>
+						  <li><a href="/AfficheEvenementFront">Evenements</a></li>
+
+						  <li><a href="/AfficheHebergementClientFront">Mes Hebergements</a></li>
+						  <li><a href="/afficheLc">Mes Locations</a></li>
+
+			          	  <li><a href="/map">Map</a></li>
+	          
+				          <li><a href="/AfficheVolClientFront">Mes Vols</a></li>
+				        </ul>
+				      </nav><!-- #nav-menu-container -->						      		  
+					</div>
+				</div>
+			</header><!-- #header -->
+			  
+			<!-- start banner Area -->
+		
+			<!-- start banner Area -->
+			<section class="relative about-banner" id="home">	
+				<div class="overlay overlay-bg"></div>
+				<div class="container">				
+					<div class="row d-flex align-items-center justify-content-center">
+						<div class="about-content col-lg-12">
+							<h1 class="text-white">
+								Réservez Votre Evenement		
+							</h1>	
+							<p class="text-white link-nav"><a href="index.html">Acceuil </a>  <span class="lnr lnr-arrow-right"></span>  <a href="elements.html"> Réservation</a></p>
+						</div>	
+					</div>
+				</div>
+			</section>
+<div class="dash">
+
+    <div class="dash-app">
+        <h1 style="color: white">Reservation </h1>
+        <h1 style="margin-center: 1700px;color: white" ><a href="{{ path('statsevenement') }}"> Statistiques </a></h1>
+
+        <table class="table" width="100%">
+            <h1 style="color: white">liste des Reservations</h1>
+            <table border="1" style="width: 1000px;color: aliceblue">
+                <thead>
+                <tr>
+                    <th>TypePaiement</th>
+                    <th>NbrPlace</th>
+                    <th>Prix a payer</th>
+
+                    <th>actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for reservation in reservations %}
+                    <tr>
+                        <td>{{ reservation.typePaiement }}</td>
+                        <td>{{ reservation.nbrPlace }}</td>
+                        <td>{{ reservation.prix }}</td>
+
+                        <td>
+                            <button class="btn-warning">
+                            <a href="{{ path('app_reservation_show_front', {'idreservation': reservation.idreservation}) }}">Afficher</a>
+                            </button>
+                                <button class="btn-danger">
+                            <a href="{{ path('app_reservation_edit_front', {'idreservation': reservation.idreservation}) }}">Modifier</a>
+                                </button>
+                            {% if  reservation.typePaiement =="En ligne" %}
+                            <button class = "btn-success" >
+
+                            <a href="{{ path('checkoutp',{'idreservation': reservation.idreservation}) }}" >Paiement</a>
+                            </button>
+                            {% else %}
+                                <button class = "btn-success" hidden>
+
+                                    <a href="{{ path('checkoutp',{'idreservation': reservation.idreservation}) }}" >Paiement</a>
+                                </button>
+
+                            {% endif %}
+
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </table>
+
+
+
+
+    </div>
+</div>
+

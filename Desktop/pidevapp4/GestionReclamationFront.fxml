@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="505.0" prefWidth="798.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidevapp4.GestionReclamationFrontController">
+    <stylesheets>
+        <URL value="@gestionreclamationfront.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="tfnom" layoutX="267.0" layoutY="56.0" onKeyReleased="#testNom" promptText="Nom" />
+      <TextField fx:id="tfprenom" layoutX="276.0" layoutY="121.0" onKeyReleased="#testPrenom" promptText="Prenom" />
+      <TextField fx:id="tfemail" layoutX="276.0" layoutY="176.0" onKeyReleased="#testEmail" promptText="Email" />
+      <TextField fx:id="tfnumero" layoutX="276.0" layoutY="228.0" onKeyReleased="#testNum" promptText="Numéro de Téléphone" />
+      <TextField fx:id="tfobjet" layoutX="495.0" layoutY="56.0" onKeyReleased="#testObjet" prefHeight="31.0" prefWidth="270.0" promptText="Objet" />
+      <TextArea fx:id="tfdescription" layoutX="495.0" layoutY="97.0" onKeyReleased="#testdescription" prefHeight="256.0" prefWidth="270.0" promptText="Description" />
+      <ImageView fx:id="screenshot" fitHeight="180.0" fitWidth="237.0" layoutX="31.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="upload" layoutX="55.0" layoutY="278.0" mnemonicParsing="false" onAction="#UploadImage" prefHeight="31.0" prefWidth="176.0" text="Upload" />
+      <Button layoutX="685.0" layoutY="445.0" mnemonicParsing="false" onAction="#AjouterReclamation" text="Ajouter" />
+      <ComboBox fx:id="tftype" layoutX="260.0" layoutY="14.0" onAction="#SelectReclamation" prefHeight="31.0" prefWidth="218.0" promptText="Type " />
+      <Text layoutX="49.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Screenshot" wrappingWidth="164.01513671875" />
+      <Button layoutX="598.0" layoutY="445.0" mnemonicParsing="false" onAction="#ModifierReclamation" text="Modifier" />
+      <TextField fx:id="tfid" layoutX="775.0" layoutY="322.0" prefHeight="31.0" prefWidth="0.0" />
+      <ImageView fx:id="recaptchaCheckMark" fitHeight="150.0" fitWidth="200.0" layoutX="260.0" layoutY="338.0" onMouseReleased="#recaptcha" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

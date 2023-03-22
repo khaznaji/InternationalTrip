@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html ">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of the PDF</title>
+
+</head >
+<body style="
+  background-size: 200px 200px;
+  background-color:#75C2F2;" >
+
+
+{#                                {% block body %}#}
+{#                                <h1 align="center" >Liste Des Réclamations </h1>#}
+
+
+
+
+<center><H1>Liste Des Chauffeurs</H1></center>
+<br>
+<br>
+<br>
+<table  Border="1" style=" width:100%;
+    font: 400 16px 'Calibri','Arial'; overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;" >
+    <thead >
+    <tr style="height: 60px;
+    background: #60AFE0;
+    font-size: 18px;">
+
+
+
+
+{#    <table class="table">#}
+{#                                    <thead>#}
+
+                                        <th>nom</th>
+                                        <th>prenom </th>
+                                        <th>sexe Envoi</th>
+                                        <th>num</th>
+                                                                                <th>disponibilite</th>
+
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for i in c %}
+                                        <tr style="height: 60px;
+      background: #CEECF4;
+      font-size: 18px;" >
+
+                                            <td>{{ i.nom }}</td>
+                                            <td>{{ i.prenom }}</td>
+                                            <td>{{ i.sexe }}</td>
+                                             <td>{{ i.num }}</td>
+                                            <td>{{ i.disponibilite }}</td>
+                                           
+                                           
+                                            <td>
+
+
+
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+
+ <center> <table width="50%" align="left" style="font-family: sans-serif; font-size: 13px; text-align: center;" ></center>
+                    <tr>
+                        <td style="padding: 0px; line-height: 20px;">
+                            <strong>International Trip</strong>
+                           <br>
+                            ABC AREA
+                            <br>
+                            Tel: +00 000 000 0000 | Email: info@InternationalTrip.com
+                            <br>
+             
+Company Registered in International Trip . Company Reg. 12121212.
+                            <br>
+                            VAT Registration No. 021021021 | ATOL No. 1234
+                        </td>
+                    </tr>
+                </table>
+                    <img src="{{ 'Front/img/signature.jpg'}}" width="200" alt="LOGO" style="vertical-align:bottom">
+
+
+</body>
+</html>
+
+
+{#{% endblock %}#}
+

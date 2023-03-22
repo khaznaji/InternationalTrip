@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="581.0" prefWidth="1064.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidevapp4.AffichageReclamationController">
+    <stylesheets>
+        <URL value="@affichagereclamation.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="680.0" fitWidth="1021.0" layoutX="210.0" layoutY="10.0" opacity="0.71" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../IntegrationFinal/src/Image/plane-flight-cloud-public.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="10.0" layoutY="2.0" prefHeight="688.0" prefWidth="210.0" style="-fx-background-color: #05071F;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" layoutX="13.0" layoutY="20.0" prefHeight="579.0" prefWidth="204.0" style="-fx-background-color: #05071F;">
+         <children>
+            <ImageView fitHeight="111.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../IntegrationFinal/src/Image/IT%20%20(2).png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="20.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+         <stylesheets>
+            <URL value="@../../../IntegrationFinal/src/pidevapp4/dashboard.css" />
+            <URL value="@../../../IntegrationFinal/src/pidevapp4/dashboard.css" />
+         </stylesheets>
+      </VBox>
+      <TableView fx:id="TableViewReclamation" layoutX="272.0" layoutY="109.0" onMousePressed="#AfficherReclamation" prefHeight="465.0" prefWidth="826.0">
+         <columns>
+            <TableColumn fx:id="col_num" prefWidth="75.0" text="Num" />
+            <TableColumn fx:id="col_type" prefWidth="75.0" text="Type" />
+            <TableColumn fx:id="col_description" prefWidth="75.0" text="Description" />
+            <TableColumn fx:id="col_objet" prefWidth="75.0" text="Objet" />
+            <TableColumn fx:id="col_nom" prefWidth="75.0" text="Nom" />
+            <TableColumn fx:id="col_prenom" prefWidth="75.0" text="Prenom" />
+            <TableColumn fx:id="col_email" prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="col_screenshot" prefWidth="75.0" text="Screenshot" />
+            <TableColumn fx:id="col_id_trip" prefWidth="75.0" text="Id Trip" />
+            <TableColumn fx:id="col_id_hotel" prefWidth="150.0" text="Id Hotel" />
+         </columns>
+         <stylesheets>
+            <URL value="@gestionreclamationfront.css" />
+            <URL value="@repondrereclamation.css" />
+         </stylesheets>
+      </TableView>
+      <Button fx:id="rep" layoutX="284.0" layoutY="584.0" mnemonicParsing="false" onAction="#Repondre" stylesheets="@repondrereclamation.css" text="Repondre Réclamation" textFill="WHITE" />
+      <Button fx:id="btnSupprimer" layoutX="468.0" layoutY="584.0" mnemonicParsing="false" onAction="#SupprimerReclamation" text="Supprimer" textFill="WHITE">
+         <stylesheets>
+            <URL value="@gestionreclamationfront.css" />
+            <URL value="@repondrereclamation.css" />
+         </stylesheets>
+      </Button>
+      <TextField fx:id="tfid" layoutX="883.0" layoutY="61.0" stylesheets="@repondrereclamation.css" />
+      <ImageView fitHeight="47.0" fitWidth="68.0" layoutX="1157.0" layoutY="20.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/systemshutdown_104277.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="237.0" layoutY="20.0" text="Label" />
+      <Button fx:id="btnSupprimer1" layoutX="946.0" layoutY="599.0" mnemonicParsing="false" onAction="#GoMenu" text="menu" textFill="WHITE">
+         <stylesheets>
+            <URL value="@gestionreclamationfront.css" />
+            <URL value="@repondrereclamation.css" />
+         </stylesheets>
+      </Button>
+      <Button fx:id="btnSupprimer2" layoutX="734.0" layoutY="600.0" mnemonicParsing="false" onAction="#GoRep" text="repondrereclamation" textFill="WHITE">
+         <stylesheets>
+            <URL value="@gestionreclamationfront.css" />
+            <URL value="@repondrereclamation.css" />
+         </stylesheets>
+      </Button>
+   </children>
+</AnchorPane>

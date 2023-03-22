@@ -1,0 +1,160 @@
+	<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	
+  <head>
+    <title>Simple Markers</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<style>
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+#map {
+  height: 100%;
+}
+
+/* 
+ * Optional: Makes the sample page fill the window. 
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+</style>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>Travel</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="../../Front/css/linearicons.css">
+			<link rel="stylesheet" href="../../Front/css/font-awesome.min.css">
+			<link rel="stylesheet" href="../../Front/css/bootstrap.css">
+			<link rel="stylesheet" href="../../Front/css/magnific-popup.css">
+			<link rel="stylesheet" href="../../Front/css/jquery-ui.css">				
+			<link rel="stylesheet" href="../../Front/css/nice-select.css">							
+			<link rel="stylesheet" href="../../Front/css/animate.min.css">
+			<link rel="stylesheet" href="../../Front/css/owl.carousel.css">				
+			<link rel="stylesheet" href="../../Front/css/main.css">
+		</head>
+		<body>	
+			<header id="header">
+				<div class="header-top">
+					<div class="container">
+			  		<div class="row align-items-center">
+			  			<div class="col-lg-6 col-sm-6 col-6 header-top-left">
+			  						
+			  			</div>
+			  			<div class="col-lg-6 col-sm-6 col-6 header-top-right">
+							<div class="header-social">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-dribbble"></i></a>
+								<a href="#"><i class="fa fa-behance"></i></a>
+							</div>
+			  			</div>
+			  		</div>			  					
+					</div>
+				</div>
+<div class="container main-menu">
+					<div class="row align-items-center justify-content-between d-flex">
+				      <div id="logo">
+				        <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+				      </div>
+				      <nav id="nav-menu-container">
+				        <ul class="nav-menu">
+						<li><a href="/newVolClient">Acceuil</a></li>
+
+				          <li><a href="/AfficheVolFront">Vols</a></li>
+				          <li><a href="/AfficheHebergementFront">Hebergements</a></li>
+				          <li><a href="#">Location Voiture</a></li>
+				          <li><a href="#">Divertissement</a></li>
+				         
+				         			      				          <li><a href="/rating/ajouter">Rating</a></li>
+				          <li><a href="/AfficheHebergementClientFront">Mes Hebergements</a></li>
+			          					          <li><a href="/map">Map</a></li>
+	          
+				          <li><a href="/AfficheVolClientFront">Mes Vols</a></li>
+				        </ul>
+				      </nav><!-- #nav-menu-container -->						      		  
+					</div>
+				</div>			
+			</header><!-- #header -->
+			<!-- start banner Area -->
+			<section class="relative about-banner" id="home">	
+				<div class="overlay overlay-bg"></div>
+				<div class="container">				
+					<div class="row d-flex align-items-center justify-content-center">
+						<div class="about-content col-lg-12">
+							<h1 class="text-white">
+								Ou sommes nous?		
+							</h1>	
+							<p class="text-white link-nav"><a href="index.html">Acceuil </a>  <span class="lnr lnr-arrow-right"></span>  <a href="elements.html"> 	Ou sommes nous?	</a></p>
+						</div>	
+					</div>
+				</div>
+			</section>
+
+
+    <div id="map"></div>
+    
+<script>
+function initMap() {
+  const myLatLng = { lat: 36.8064948, lng: 10.181531999999971   };
+  const myLatSousse = { lat: 35.8288175 , lng: 10.6405392  };
+  const myLatAriana = { lat: 36.8587351 , lng: 10.188232  };
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 6,
+    center: myLatLng,
+  });
+
+  new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "International Trip Tunis",
+  });
+    new google.maps.Marker({
+    position: myLatSousse,
+    map,
+    title: "International Trip Sousse",
+  });
+     new google.maps.Marker({
+    position: myLatAriana,
+    map,
+    title: "International Trip Ariana",
+  });
+}
+
+window.initMap = initMap;
+</script>
+    <!-- 
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjsVWT-AofxaDYfIsoauLlawFIPlZBeUc&callback=initMap&v=weekly"
+      defer
+    ></script>
+    
+  </body>
+</html>

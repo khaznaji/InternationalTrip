@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidevapp4.EvenementController">
+    <stylesheets>
+        <URL value="@evenement.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="581.0" prefWidth="1064.0" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@gestiontrip.css" />
+         </stylesheets>
+         <children>
+            <ImageView fitHeight="703.0" fitWidth="1021.0" layoutX="200.0" opacity="0.71" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/plane-flight-cloud-public.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="label" layoutX="136.0" layoutY="130.0" minHeight="16" minWidth="69" />
+            <Button fx:id="btajouter" layoutX="248.0" layoutY="528.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="31.0" prefWidth="160.0" text="Ajouter" textFill="WHITE" />
+            <Button fx:id="btsupprimer" layoutX="355.0" layoutY="572.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="31.0" prefWidth="106.0" text="Supprimer" textFill="WHITE" />
+            <Button fx:id="btmodifier" layoutX="239.0" layoutY="572.0" mnemonicParsing="false" onAction="#modifier" prefHeight="31.0" prefWidth="99.0" text="Modifier" textFill="WHITE" />
+            <TextField fx:id="tfnom" layoutX="223.0" layoutY="136.0" onKeyReleased="#testVille" prefHeight="31.0" prefWidth="253.0" promptText="nom" style="-fx-background-radius: 30;" />
+            <TextField fx:id="tftype" layoutX="223.0" layoutY="187.0" onKeyReleased="#testOffre" prefHeight="31.0" prefWidth="253.0" promptText="type" style="-fx-background-color: ffff; -fx-background-radius: 30;" />
+            <TableView fx:id="tab" layoutX="522.0" layoutY="134.0" onMouseClicked="#getselected" onMousePressed="#Afficher" prefHeight="527.0" prefWidth="700.0">
+               <columns>
+                  <TableColumn fx:id="colnom" prefWidth="75.0" text="nom" />
+                  <TableColumn fx:id="coltype" prefWidth="126.0" text="type" />
+                  <TableColumn fx:id="colimage" prefWidth="84.0" text="image" />
+                  <TableColumn fx:id="colnbr_place" prefWidth="131.0" text="nbr place" />
+                  <TableColumn fx:id="coldate" prefWidth="114.0" text="date" />
+                  <TableColumn fx:id="colprix" prefWidth="238.0" text="prix" />
+                  <TableColumn fx:id="col_periode2" prefWidth="154.0" text="date" />
+               </columns>
+            </TableView>
+            <TextField fx:id="tfnbr_place" layoutX="223.0" layoutY="386.0" onKeyReleased="#testPeriode" prefHeight="31.0" prefWidth="253.0" promptText="nbr_place" style="-fx-background-radius: 30;" />
+            <Label fx:id="erreurdescrip" layoutX="64.0" layoutY="272.0" prefHeight="21.0" prefWidth="206.0" />
+            <Label fx:id="villeerreur" layoutX="35.0" layoutY="204.0" prefHeight="21.0" prefWidth="246.0" />
+            <Label fx:id="descriperreur" layoutX="21.0" layoutY="262.0" prefHeight="21.0" prefWidth="277.0" />
+            <Label fx:id="periodeerreur" layoutX="19.0" layoutY="387.0" prefHeight="21.0" prefWidth="277.0" />
+            <ImageView fx:id="recaptchaCheckMark" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="473.0" onMouseClicked="#recaptcha" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="villererreur" layoutX="64.0" layoutY="204.0" prefHeight="21.0" prefWidth="221.0" />
+            <Label layoutX="61.0" layoutY="262.0" />
+            <Label fx:id="offreerreur" layoutX="231.0" layoutY="649.0" prefHeight="21.0" prefWidth="237.0" />
+            <Label fx:id="periodeerreur" layoutX="43.0" layoutY="387.0" prefHeight="21.0" prefWidth="221.0" />
+            <TextField fx:id="tfrecherche" layoutX="603.0" layoutY="89.0" prefHeight="31.0" prefWidth="602.0" promptText="Recherche par nom" style="-fx-background-radius: 30; -fx-background-color: #10165F;" />
+            <VBox layoutY="-8.0" prefHeight="688.0" prefWidth="211.0" style="-fx-background-color: #05071F;" />
+            <VBox alignment="TOP_CENTER" layoutX="3.0" layoutY="10.0" prefHeight="579.0" prefWidth="204.0" style="-fx-background-color: #05071F;" stylesheets="@dashboard.css">
+               <children>
+                  <ImageView fitHeight="111.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/IT%20%20(2).png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="20.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="252.0" text=" DashBoard">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/maison%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="214.0" text="Utilisateurs">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/utilisateur%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="206.0" text="Voyage">
+                     <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/avion.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="215.0" text="Hotel">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/hotel.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="212.0" text="Chauffeur">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/icons8-driver-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="214.0" text="Location de voiture">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/cartransport_coch_3575.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="211.0" text="Divertissements">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/parc-dattractions.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="212.0" text="Evénements">
+                     <graphic>
+                        <ImageView fitHeight="72.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/party.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="225.0" text="Pack">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/gift-box-with-a-bow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="216.0" text="Restaurants">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/restaurant.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="225.0" text="Participation">
+                     <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/billets-davion.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="234.0" text="Réclamation">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/contrat.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="233.0" text="Réservation">
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/billets-davion.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="215.0" text="Publicité">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/digital-marketing.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+            <Text fill="WHITE" layoutX="224.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Des Evenements" wrappingWidth="300.240387737751">
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font>
+            </Text>
+            <Button fx:id="btbrowse" layoutX="255.0" layoutY="347.0" mnemonicParsing="false" onAction="#importimage" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #f9a61c; -fx-background-radius: 1em;" text="Browse" textFill="WHITE" />
+            <DatePicker fx:id="tfdate" layoutX="224.0" layoutY="429.0" prefHeight="31.0" prefWidth="253.0" promptText="date " style="-fx-background-radius: 1em;" />
+            <TextField fx:id="tfprix" layoutX="224.0" layoutY="473.0" prefHeight="31.0" prefWidth="253.0" promptText="prix" style="-fx-background-radius: 1em;" />
+            <Button fx:id="btntridate" layoutX="230.0" layoutY="627.0" mnemonicParsing="false" onAction="#trierDate" style="-fx-background-color: #f9a61c; -fx-background-radius: 30;" text="Tri date" textFill="WHITE" />
+            <Button fx:id="btprint" layoutX="422.0" layoutY="625.0" mnemonicParsing="false" onAction="#print" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: #f9a61c; -fx-background-radius: 30;" text="Print" textFill="WHITE" />
+            <Button fx:id="btnexcel" layoutX="319.0" layoutY="625.0" mnemonicParsing="false" onAction="#excel" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: #f9a61c; -fx-background-radius: 30;" text="Excel" textFill="WHITE" />
+            <ImageView fx:id="importimage" fitHeight="111.0" fitWidth="148.0" layoutX="265.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="btvalider" layoutX="1101.0" layoutY="49.0" mnemonicParsing="false" onAction="#recherchety" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: #f9a61c; -fx-background-radius: 30;" text="Valider" textFill="WHITE" />
+            <Button fx:id="btprint1" layoutX="940.0" layoutY="41.0" mnemonicParsing="false" onAction="#GoMenu" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: #f9a61c; -fx-background-radius: 30;" text="menu" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

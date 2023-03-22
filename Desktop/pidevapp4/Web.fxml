@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane id="AnchorPane" prefHeight="496.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidevapp4.WebController">
+   <children>
+      <WebView fx:id="webView" layoutY="30.0" prefHeight="466.0" prefWidth="845.0" />
+      <Button fx:id="textField" layoutX="783.0" layoutY="-1.0" mnemonicParsing="false" onAction="#ZoomIn" prefHeight="16.0" prefWidth="31.0" text="+" />
+      <Button layoutX="814.0" layoutY="-1.0" mnemonicParsing="false" onAction="#ZoomOut" prefHeight="31.0" prefWidth="31.0" text="-" />
+      <Button layoutX="694.0" mnemonicParsing="false" onAction="#History" text="Historique" />
+      <Label alignment="CENTER" layoutX="28.0" layoutY="5.0" prefHeight="21.0" prefWidth="440.0" text="International Trip " textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS" underline="true" />
+      <Button layoutX="176.0" layoutY="255.0" mnemonicParsing="false" onAction="#GoMenu" text="menu" />
+   </children>
+</AnchorPane>

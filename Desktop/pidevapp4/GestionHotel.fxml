@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="575.0" prefWidth="920.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidevapp4.GestionHotelController">
+    <stylesheets>
+        <URL value="@gestionhotel.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="510.0" prefWidth="983.0" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@gestionhebergement.css" />
+         </stylesheets>
+         <children>
+            <ImageView fitHeight="680.0" fitWidth="1021.0" layoutX="220.0" layoutY="20.0" opacity="0.71" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../IntegrationFinal/src/Image/plane-flight-cloud-public.jpg" />
+               </image>
+            </ImageView>
+            <VBox layoutX="20.0" layoutY="12.0" prefHeight="688.0" prefWidth="210.0" style="-fx-background-color: #05071F;">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="23.0" layoutY="30.0" prefHeight="579.0" prefWidth="204.0" style="-fx-background-color: #05071F;">
+               <children>
+                  <ImageView fitHeight="111.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../IntegrationFinal/src/Image/IT%20%20(2).png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="20.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+               <stylesheets>
+                  <URL value="@../../../IntegrationFinal/src/pidevapp4/dashboard.css" />
+                  <URL value="@../../../IntegrationFinal/src/pidevapp4/dashboard.css" />
+               </stylesheets>
+            </VBox>
+            <TextField fx:id="tfid" layoutX="297.0" layoutY="110.0" stylesheets="@repondrereclamation.css" />
+            <TextField fx:id="tfimg" layoutX="297.0" layoutY="281.0" stylesheets="@repondrereclamation.css" />
+            <TextField fx:id="tfprix" layoutX="297.0" layoutY="190.0" stylesheets="@repondrereclamation.css" />
+            <TextField fx:id="tfdescrip" layoutX="297.0" layoutY="151.0" stylesheets="@repondrereclamation.css" />
+            <TextField fx:id="tfnom" layoutX="297.0" layoutY="237.0" stylesheets="@repondrereclamation.css" />
+            <TableView fx:id="tablehotel" layoutX="647.0" layoutY="51.0" onMouseClicked="#AfficherHotel" prefHeight="618.0" prefWidth="519.0" stylesheets="@repondrereclamation.css">
+               <columns>
+                  <TableColumn fx:id="tabid" prefWidth="75.0" text="id" />
+                  <TableColumn fx:id="tabdescrip" prefWidth="75.0" text="description" />
+                  <TableColumn fx:id="tabprix" prefWidth="75.0" text="Prix" />
+                  <TableColumn fx:id="tabnom" prefWidth="75.0" text="nom" />
+                  <TableColumn fx:id="tabimg" prefWidth="75.0" text="image" />
+               </columns>
+            </TableView>
+            <Button layoutX="509.0" layoutY="485.0" mnemonicParsing="false" onAction="#AjouterHotel" prefHeight="31.0" prefWidth="123.0" stylesheets="@repondrereclamation.css" text="ajouter" />
+            <Button layoutX="509.0" layoutY="526.0" mnemonicParsing="false" onAction="#ModifierHotel" prefHeight="31.0" prefWidth="123.0" stylesheets="@repondrereclamation.css" text="modifier" />
+            <Button layoutX="509.0" layoutY="565.0" mnemonicParsing="false" onAction="#SupprimerHotel" prefHeight="31.0" prefWidth="123.0" stylesheets="@repondrereclamation.css" text="supprimer" />
+            <ImageView fx:id="imghotel" fitHeight="108.0" fitWidth="164.0" layoutX="296.0" layoutY="486.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="upload" layoutX="317.0" layoutY="620.0" mnemonicParsing="false" onAction="#UploadImage" prefHeight="31.0" prefWidth="123.0" stylesheets="@repondrereclamation.css" text="Upload" />
+            <ImageView fitHeight="47.0" fitWidth="68.0" layoutX="1180.0" layoutY="28.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Downloads/systemshutdown_104277.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="509.0" layoutY="627.0" mnemonicParsing="false" onAction="#GoMenu" prefHeight="31.0" prefWidth="123.0" stylesheets="@repondrereclamation.css" text="menu" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

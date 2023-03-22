@@ -1,0 +1,49 @@
+
+
+{% block body %}
+<div class="dash">
+
+    <div class="dash-app">
+        <h1>Reservation Vol</h1>
+
+        <table class="table">
+            <h1>liste des Reservations</h1>
+            <table border="1" width="100% ">
+                <thead>
+                <tr>
+                    <th>Idreservation</th>
+                    <th>TypePaiement</th>
+                    <th>NbrPlace</th>
+                    <th>actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for reservation in reservations %}
+                    <tr>
+                        <td>{{ reservation.idreservation }}</td>
+                        <td>{{ reservation.typePaiement }}</td>
+                        <td>{{ reservation.nbrPlace }}</td>
+                        <td>
+                            <button class="btn-outline-warning">
+                            <a href="{{ path('app_reservation_show', {'idreservation': reservation.idreservation}) }}">Afficher</a>
+                            </button>
+                                <button class="btn-outline-warning">
+                            <a href="{{ path('app_reservation_edit', {'idreservation': reservation.idreservation}) }}">Modifier</a>
+                                </button>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <a href="{{ path('app_reservation_new') }}">Ajouter</a>
+        </table>
+
+    </div>
+</div>
+
+{% endblock %}

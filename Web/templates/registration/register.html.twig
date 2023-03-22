@@ -1,0 +1,128 @@
+ {% extends 'base.html.twig' %}
+
+{% block title %}inscription{% endblock %}
+
+{% block body %}
+{{parent()}}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+            {% endfor %}
+        <!-- Pre-loader end -->
+  <section class="login-block">
+        <!-- Container-fluid starts -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                   
+                        <div class="text-center">
+                            <img src="{{asset('back/assets/images/logo.png')}}" height="80" alt="logo.png">
+                        </div>
+                        <div class="auth-box card">
+                            <div class="card-block">
+                                <div class="row m-b-20">
+                                    <div class="col-md-12">
+                                        <h3 class="text-center txt-primary">inscrir</h3>
+                                    </div>
+                                </div>
+                                {{ form_start(registrationForm,{'attr':{'class':'md-float-material form-material'}}) }}
+                                <div class="form-group form-primary">
+                                    {{ form_widget(registrationForm.email) }}
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">{{ form_label(registrationForm.email) }}</label>
+                                    {{ form_errors(registrationForm.email) }}
+                                </div>
+                                <div class="form-group form-primary">
+                                    {{ form_widget(registrationForm.nom) }} 
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">{{ form_label(registrationForm.nom) }}</label>
+                                    {{ form_errors(registrationForm.nom) }}
+                                </div>
+                                <div class="form-group form-primary">
+                                    {{ form_widget(registrationForm.prenom) }} 
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">{{ form_label(registrationForm.prenom) }}</label>
+                                    {{ form_errors(registrationForm.prenom) }}
+                                </div>
+                                <div class="form-group form-primary">
+                                    {{ form_widget(registrationForm.cin) }}
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">{{ form_label(registrationForm.cin) }}</label>
+                                    {{ form_errors(registrationForm.cin) }}
+                                </div>
+                                <div class="form-group form-primary">
+                                    {{ form_widget(registrationForm.tel) }} 
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">{{ form_label(registrationForm.tel) }}</label>
+                                    {{ form_errors(registrationForm.tel) }}
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-primary">
+                                            {{ form_widget(registrationForm.plainPassword)}}
+                                            <span class="form-bar"></span>
+                                            <label class="float-label">{{ form_label(registrationForm.plainPassword) }}</label>
+                                            {{ form_errors(registrationForm.plainPassword) }}
+                                        </div>
+                                    </div>
+                                </div>  
+                                <div class="row m-t-30">
+                                    <div class="col-md-12">
+                                        {% block imageFile_widget %}
+                                   {{ form_row(registrationForm.imageFile) }}
+                                {% endblock %}
+                                    </div>
+                                </div> 
+                                <div class="row m-t-25 text-left">
+                                    <div class="col-md-12">
+                                        <div class="checkbox-fade fade-in-primary">
+                                            <label>
+                                                {{ form_widget(registrationForm.agreeTerms) }}
+                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                <span class="text-inverse">I read and accept <a href="#">Terms &amp; Conditions.</a></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row m-t-30">
+                                    <div class="col-md-12">
+                                        {% block captcha_widget %}
+                                   {#} {{ form_row(registrationForm.captcha) }}#}
+                                {% endblock %}
+                                    </div>
+                                </div>
+
+                                <div class="row m-t-30">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">inscrir</button>
+                                    </div>
+                                </div>
+                                
+                                {{ form_end(registrationForm) }}
+                                <hr/>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <p class="text-inverse text-left m-b-0">merci .</p>
+                                        <p class="text-inverse text-left"><a href="/login"><b>retour a la page de connection</b></a></p>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <img src="{{asset('back/assets/images/auth/Logo-small-bottom.png')}}" alt="small-logo.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   
+                </div>
+                <!-- end of col-sm-12 -->
+            </div>
+            <!-- end of row -->
+        </div>
+        <!-- end of container-fluid -->
+    </section>
+    {% endblock %}
+
+  
+
+
+
+
