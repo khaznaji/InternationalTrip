@@ -1,4 +1,4 @@
-# Project Name
+# Interational Trip
 This is a travel app project that consists of multiple applications. The project includes a web application built with Symfony, a desktop application built with JavaFX, and a mobile application built with Codename One.
 
 ## Features
